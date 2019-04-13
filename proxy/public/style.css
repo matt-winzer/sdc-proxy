@@ -1,5 +1,20 @@
-#Info {
+#TopTracks {
   display: block;
+  width: 80%;
+}
+
+#Header {
+  /* margin-left: -230px; */
+  padding-left: 230px;
+  width: 100%;
+}
+
+#Bodyalbum {
+  display: block;
+}
+
+#relatedartists {
+  margin-left: 230px;
 }
 
 #CountDown {
@@ -10,5 +25,10 @@
 #Related {
   margin: 10%;
   display: block;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
 }
 
