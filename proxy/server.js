@@ -10,8 +10,12 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const proxy = httpProxy.createProxyServer({
-  target: "http://ec2-18-191-178-115.us-east-2.compute.amazonaws.com/"
+const proxy = httpProxy.createProxyServer();
+
+app.all("/data/artist/*", (req, res) => {
+  proxy.web(req, res, {
+    target: "http://ec2-18-191-230-44.us-east-2.compute.amazonaws.com/"
+  });
 });
 
 app.all("/data/toptracks", (req, res) => {
@@ -22,32 +26,34 @@ app.all("/data/toptracks", (req, res) => {
 
 app.get('/data/albumswithartist/*', (req, res) => {
   proxy.web(req, res, {
-    target: 'http://ec2-13-58-138-231.us-east-2.compute.amazonaws.com/'
+    target: 'http://ec2-3-17-177-153.us-east-2.compute.amazonaws.com/'
   });
 });
+
 app.get('/data/albumsbyartist/*', (req, res) => {
   proxy.web(req, res, {
-    target: 'http://ec2-13-58-138-231.us-east-2.compute.amazonaws.com/'
+    target: 'http://ec2-3-17-177-153.us-east-2.compute.amazonaws.com/'
   });
 });
+
 app.get('/data/epswithartist/*', (req, res) => {
   proxy.web(req, res, {
-    target: 'http://ec2-13-58-138-231.us-east-2.compute.amazonaws.com/'
+    target: 'http://ec2-3-17-177-153.us-east-2.compute.amazonaws.com/'
   });
 });
+
 app.get('/data/compilationswithartist/*', (req, res) => {
   proxy.web(req, res, {
-    target: 'http://ec2-13-58-138-231.us-east-2.compute.amazonaws.com/'
+    target: 'http://ec2-3-17-177-153.us-east-2.compute.amazonaws.com/'
   });
 });
 
-app.all("/data/artist/*", (req, res) => {
+app.all("/data/artist", (req, res) => {
   proxy.web(req, res, {
-    target: "http://ec2-52-91-196-238.compute-1.amazonaws.com/"
+    target: "http://ec2-34-227-148-64.compute-1.amazonaws.com/"
   });
 });
 
-
-http: app.listen(port, () => {
+app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });

@@ -1,34 +1,37 @@
-#TopTracks {
-  display: block;
-  width: 80%;
-}
-
-#Header {
-  /* margin-left: -230px; */
-  padding-left: 230px;
-  width: 100%;
-}
-
-#Bodyalbum {
-  display: block;
-}
-
-#relatedartists {
-  margin-left: 230px;
-}
-
-#CountDown {
-  margin-left: 5px;
-  display: inline-block;
-}
-
-#Related {
-  margin: 10%;
-  display: block;
-}
-
 #main {
   display: flex;
   flex-direction: column;
 }
 
+div#content {
+  padding-right: 20px;
+}
+
+div.sc-bdVaJa, div.kDGqVA {
+  z-index: 2;
+}
+
+div.img-header {
+  width: 100vw !important;
+  margin-top: -10px;
+}
+
+div.Sidebar {
+  height: 658px;
+}
+
+div.User {
+  margin-top: 12px;
+}
+
+#relatedartists {
+  margin-left: 220px;
+}
+
+div.ArtistList__Icon-sc-18aftq2-1 {
+  width: auto !important;
+}
+
+img.User {
+  margin-top: 6px;
+}
